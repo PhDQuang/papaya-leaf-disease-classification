@@ -103,8 +103,4 @@ For GPU training, install TensorFlow/PyTorch builds that match your CUDA environ
 
 The original image dataset is not included in this downloaded repository. YOLO annotation files and preprocessing reports are kept under `data/`.
 
-Trained checkpoints are stored locally under `outputs/`, but `*.keras` and `*.pt` files are ignored by `.gitignore` because several files are too large for normal GitHub uploads. Use Git LFS or GitHub Releases if you want to publish model weights.
-
-## Suggested CV Line
-
-Built a two-stage YOLOv11m + EfficientNetB2 cascade for papaya leaf disease detection and classification, improving a full-image baseline from 92.78% to 94.85% accuracy on a five-class test set.
+Trained checkpoints are stored locally under `outputs/`, but `*.keras` and `*.pt` files are ignored by `.gitignore` because several files are too large for normal GitHub uploads. Mail uni.pdq@gmail.com for more!
