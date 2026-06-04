@@ -1,0 +1,14 @@
+ultralytics
+tensorflow
+torch
+torchvision
+numpy
+pandas==2.2.2
+pillow==11.3.0
+scikit-learn
+opencv-python
+matplotlib
+seaborn
+tqdm
+jupyter
+notebook

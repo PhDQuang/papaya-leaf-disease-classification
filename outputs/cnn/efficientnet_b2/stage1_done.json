@@ -1,0 +1,8 @@
+{
+  "model_alias": "EfficientNetB2",
+  "stage": "stage1",
+  "status": "done",
+  "stage1_best": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/Model/CNN/EfficientNetB2/best_stage1.keras",
+  "stage1_last": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/Model/CNN/EfficientNetB2/last_stage1.keras",
+  "timestamp": "2026-04-26 09:25:13"
+}

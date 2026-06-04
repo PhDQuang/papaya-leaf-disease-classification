@@ -1,0 +1,16 @@
+﻿split,class_name,num_images,class_dir
+train,Anthracnose,4416,/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/prepared_data_v1/cnn_dataset/train/Anthracnose
+train,BacterialSpot,320,/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/prepared_data_v1/cnn_dataset/train/BacterialSpot
+train,Curl,254,/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/prepared_data_v1/cnn_dataset/train/Curl
+train,Healthy,160,/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/prepared_data_v1/cnn_dataset/train/Healthy
+train,RingSpot,2412,/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/prepared_data_v1/cnn_dataset/train/RingSpot
+val,Anthracnose,1046,/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/prepared_data_v1/cnn_dataset/val/Anthracnose
+val,BacterialSpot,69,/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/prepared_data_v1/cnn_dataset/val/BacterialSpot
+val,Curl,54,/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/prepared_data_v1/cnn_dataset/val/Curl
+val,Healthy,34,/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/prepared_data_v1/cnn_dataset/val/Healthy
+val,RingSpot,510,/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/prepared_data_v1/cnn_dataset/val/RingSpot
+test,Anthracnose,1040,/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/prepared_data_v1/cnn_dataset/test/Anthracnose
+test,BacterialSpot,69,/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/prepared_data_v1/cnn_dataset/test/BacterialSpot
+test,Curl,54,/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/prepared_data_v1/cnn_dataset/test/Curl
+test,Healthy,34,/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/prepared_data_v1/cnn_dataset/test/Healthy
+test,RingSpot,639,/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/prepared_data_v1/cnn_dataset/test/RingSpot

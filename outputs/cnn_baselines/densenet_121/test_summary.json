@@ -1,0 +1,13 @@
+{
+  "model_alias": "DenseNet121",
+  "accuracy": 0.9471677559912854,
+  "macro_precision": 0.9187517459373755,
+  "macro_recall": 0.9544707149272007,
+  "macro_f1": 0.9356650389030013,
+  "weighted_precision": 0.9474950267131385,
+  "weighted_recall": 0.9471677559912854,
+  "weighted_f1": 0.9472134538657139,
+  "num_test_samples": 1836,
+  "final_best": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/Model/CNN_Baselines/DenseNet121/best_model.keras",
+  "timestamp": "2026-04-28 14:20:40"
+}

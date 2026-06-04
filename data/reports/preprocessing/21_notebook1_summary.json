@@ -1,0 +1,163 @@
+{
+  "initial_image_counts_by_class": {
+    "Anthracnose": 355,
+    "BacterialSpot": 458,
+    "Curl": 585,
+    "Healthy": 228,
+    "RingSpot": 533
+  },
+  "cross_class_name_conflict_images": 0,
+  "cross_class_sha1_conflict_images": 448,
+  "cross_class_phash_review_images": 448,
+  "num_auto_excluded_source_images": 224,
+  "num_clean_skip_records": 224,
+  "num_invalid_source_labels": 0,
+  "num_invalid_clean_labels": 158,
+  "yolo_counts_by_split_and_class": [
+    {
+      "split": "test",
+      "canonical_class": "Anthracnose",
+      "count": 54
+    },
+    {
+      "split": "test",
+      "canonical_class": "BacterialSpot",
+      "count": 69
+    },
+    {
+      "split": "test",
+      "canonical_class": "Curl",
+      "count": 54
+    },
+    {
+      "split": "test",
+      "canonical_class": "RingSpot",
+      "count": 80
+    },
+    {
+      "split": "train",
+      "canonical_class": "Anthracnose",
+      "count": 248
+    },
+    {
+      "split": "train",
+      "canonical_class": "BacterialSpot",
+      "count": 320
+    },
+    {
+      "split": "train",
+      "canonical_class": "Curl",
+      "count": 253
+    },
+    {
+      "split": "train",
+      "canonical_class": "RingSpot",
+      "count": 373
+    },
+    {
+      "split": "val",
+      "canonical_class": "Anthracnose",
+      "count": 53
+    },
+    {
+      "split": "val",
+      "canonical_class": "BacterialSpot",
+      "count": 69
+    },
+    {
+      "split": "val",
+      "canonical_class": "Curl",
+      "count": 54
+    },
+    {
+      "split": "val",
+      "canonical_class": "RingSpot",
+      "count": 80
+    }
+  ],
+  "cnn_counts_by_split_and_class": [
+    {
+      "split": "test",
+      "canonical_class": "Anthracnose",
+      "count": 1040
+    },
+    {
+      "split": "test",
+      "canonical_class": "BacterialSpot",
+      "count": 69
+    },
+    {
+      "split": "test",
+      "canonical_class": "Curl",
+      "count": 54
+    },
+    {
+      "split": "test",
+      "canonical_class": "Healthy",
+      "count": 34
+    },
+    {
+      "split": "test",
+      "canonical_class": "RingSpot",
+      "count": 639
+    },
+    {
+      "split": "train",
+      "canonical_class": "Anthracnose",
+      "count": 4416
+    },
+    {
+      "split": "train",
+      "canonical_class": "BacterialSpot",
+      "count": 320
+    },
+    {
+      "split": "train",
+      "canonical_class": "Curl",
+      "count": 254
+    },
+    {
+      "split": "train",
+      "canonical_class": "Healthy",
+      "count": 160
+    },
+    {
+      "split": "train",
+      "canonical_class": "RingSpot",
+      "count": 2412
+    },
+    {
+      "split": "val",
+      "canonical_class": "Anthracnose",
+      "count": 1046
+    },
+    {
+      "split": "val",
+      "canonical_class": "BacterialSpot",
+      "count": 69
+    },
+    {
+      "split": "val",
+      "canonical_class": "Curl",
+      "count": 54
+    },
+    {
+      "split": "val",
+      "canonical_class": "Healthy",
+      "count": 34
+    },
+    {
+      "split": "val",
+      "canonical_class": "RingSpot",
+      "count": 510
+    }
+  ],
+  "yolo_split_method": "stratified_train_test_split",
+  "timestamp": "2026-04-23 17:37:37",
+  "project_root": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification",
+  "prep_root": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/prepared_data_v1",
+  "clean_root": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/prepared_data_v1/Dataset",
+  "yolo_out": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/prepared_data_v1/yolo_dataset",
+  "cnn_out": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/prepared_data_v1/cnn_dataset",
+  "report_root": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/prepared_data_v1/reports"
+}

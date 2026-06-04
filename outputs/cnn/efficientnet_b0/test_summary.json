@@ -1,0 +1,13 @@
+{
+  "model_alias": "EfficientNetB0",
+  "accuracy": 0.9558823529411765,
+  "macro_precision": 0.9350515159338745,
+  "macro_recall": 0.9468203756607452,
+  "macro_f1": 0.940500067267466,
+  "weighted_precision": 0.956123903605619,
+  "weighted_recall": 0.9558823529411765,
+  "weighted_f1": 0.9559182442193366,
+  "num_test_samples": 1836,
+  "final_best": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/Model/CNN/EfficientNetB0/best_model.keras",
+  "timestamp": "2026-04-25 18:36:57"
+}

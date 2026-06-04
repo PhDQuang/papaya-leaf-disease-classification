@@ -1,0 +1,13 @@
+{
+  "model_alias": "VGG16",
+  "accuracy": 0.9558823529411765,
+  "macro_precision": 0.9464783938147276,
+  "macro_recall": 0.9538431676835373,
+  "macro_f1": 0.9496930582644868,
+  "weighted_precision": 0.9560287548480914,
+  "weighted_recall": 0.9558823529411765,
+  "weighted_f1": 0.9558837221613443,
+  "num_test_samples": 1836,
+  "final_best": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/Model/CNN_Baselines/VGG16/best_model.keras",
+  "timestamp": "2026-04-28 18:08:30"
+}

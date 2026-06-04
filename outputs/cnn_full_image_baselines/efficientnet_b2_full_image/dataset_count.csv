@@ -1,0 +1,16 @@
+﻿split,class_name,num_images
+train,Anthracnose,248
+train,BacterialSpot,320
+train,Curl,253
+train,Healthy,160
+train,RingSpot,373
+val,Anthracnose,53
+val,BacterialSpot,69
+val,Curl,54
+val,Healthy,34
+val,RingSpot,80
+test,Anthracnose,54
+test,BacterialSpot,69
+test,Curl,54
+test,Healthy,34
+test,RingSpot,80

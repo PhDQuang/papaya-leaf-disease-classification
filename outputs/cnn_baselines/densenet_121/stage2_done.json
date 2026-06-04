@@ -1,0 +1,10 @@
+{
+  "model_alias": "DenseNet121",
+  "stage": "stage2",
+  "status": "done",
+  "stage2_best": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/Model/CNN_Baselines/DenseNet121/best_stage2.keras",
+  "stage2_last": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/Model/CNN_Baselines/DenseNet121/last_stage2.keras",
+  "final_best": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/Model/CNN_Baselines/DenseNet121/best_model.keras",
+  "final_last": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/Model/CNN_Baselines/DenseNet121/last_model.keras",
+  "timestamp": "2026-04-28 14:06:46"
+}

@@ -1,0 +1,8 @@
+{
+  "model_alias": "VGG16",
+  "stage": "stage1",
+  "status": "done",
+  "stage1_best": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/Model/CNN_Baselines/VGG16/best_stage1.keras",
+  "stage1_last": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/Model/CNN_Baselines/VGG16/last_stage1.keras",
+  "timestamp": "2026-04-27 17:10:12"
+}

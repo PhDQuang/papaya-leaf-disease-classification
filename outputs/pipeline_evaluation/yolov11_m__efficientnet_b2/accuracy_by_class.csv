@@ -1,0 +1,6 @@
+﻿true_class,num_samples,num_correct,accuracy
+Anthracnose,54,51,0.9444444444444444
+BacterialSpot,69,65,0.9420289855072463
+Curl,54,53,0.9814814814814815
+Healthy,34,32,0.9411764705882353
+RingSpot,80,75,0.9375

@@ -1,0 +1,29 @@
+{
+  "train": {
+    "split": "train",
+    "num_images": 1194,
+    "num_labels": 1194,
+    "missing_labels": [],
+    "orphan_labels": [],
+    "image_dir": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/prepared_data_v1/yolo_dataset/images/train",
+    "label_dir": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/prepared_data_v1/yolo_dataset/labels/train"
+  },
+  "val": {
+    "split": "val",
+    "num_images": 256,
+    "num_labels": 256,
+    "missing_labels": [],
+    "orphan_labels": [],
+    "image_dir": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/prepared_data_v1/yolo_dataset/images/val",
+    "label_dir": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/prepared_data_v1/yolo_dataset/labels/val"
+  },
+  "test": {
+    "split": "test",
+    "num_images": 257,
+    "num_labels": 257,
+    "missing_labels": [],
+    "orphan_labels": [],
+    "image_dir": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/prepared_data_v1/yolo_dataset/images/test",
+    "label_dir": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/prepared_data_v1/yolo_dataset/labels/test"
+  }
+}

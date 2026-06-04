@@ -1,0 +1,14 @@
+{
+  "model_alias": "YOLOv11m",
+  "checkpoint_path": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/Model/YOLOv11/YOLOv11m/weights/best.pt",
+  "split": "test",
+  "mp": 0.802425418868267,
+  "mr": 0.8161550445598378,
+  "map50": 0.7766996833045567,
+  "map75": 0.6976401308749318,
+  "map50_95": 0.652017748369669,
+  "speed_preprocess_ms": 1.8967160778217196,
+  "speed_inference_ms": 29.663122124511467,
+  "speed_loss_ms": 0.006838536962811803,
+  "speed_postprocess_ms": 1.3292863073934933
+}

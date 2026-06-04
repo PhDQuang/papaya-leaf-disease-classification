@@ -1,0 +1,18 @@
+{
+  "model": "EfficientNetB2_CNN_Only_Full_Image_Fair",
+  "dataset": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/prepared_data_v1/cnn_full_image_dataset",
+  "train_dir": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/prepared_data_v1/cnn_full_image_dataset/train",
+  "val_dir": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/prepared_data_v1/cnn_full_image_dataset/val",
+  "test_dir": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/prepared_data_v1/cnn_full_image_dataset/test",
+  "num_test_samples": 291,
+  "accuracy": 0.9278350515463918,
+  "macro_precision": 0.9317002226110386,
+  "macro_recall": 0.9285526191152789,
+  "macro_f1": 0.9293195977595674,
+  "weighted_precision": 0.9288399783127771,
+  "weighted_recall": 0.9278350515463918,
+  "weighted_f1": 0.9273944819302771,
+  "best_model_path": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/Model/CNN_Full_Image_Baselines/EfficientNetB2_Fair/best_model.keras",
+  "last_model_path": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/Model/CNN_Full_Image_Baselines/EfficientNetB2_Fair/last_model.keras",
+  "timestamp": "2026-04-29 17:40:42"
+}

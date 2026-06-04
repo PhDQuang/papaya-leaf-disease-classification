@@ -1,0 +1,1 @@
+﻿pair_name,yolo_alias,cnn_alias,image_path,true_class,pred_class,correct,source,reason,num_boxes,conf_used,full_cnn_class,full_cnn_conf,final_scores_json,disease_list_json,crop_predictions_json,error

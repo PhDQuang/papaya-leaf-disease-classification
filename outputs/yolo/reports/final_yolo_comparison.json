@@ -1,0 +1,47 @@
+[
+  {
+    "model_alias": "YOLOv11m",
+    "checkpoint_path": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/Model/YOLOv11/YOLOv11m/weights/best.pt",
+    "split": "test",
+    "mp": 0.802425418868267,
+    "mr": 0.8161550445598378,
+    "map50": 0.7766996833045567,
+    "map75": 0.6976401308749318,
+    "map50_95": 0.652017748369669,
+    "speed_preprocess_ms": 1.89671607782172,
+    "speed_inference_ms": 29.663122124511467,
+    "speed_loss_ms": 0.0068385369628118,
+    "speed_postprocess_ms": 1.3292863073934933,
+    "status": "ok"
+  },
+  {
+    "model_alias": "YOLOv11s",
+    "checkpoint_path": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/Model/YOLOv11/YOLOv11s/weights/best.pt",
+    "split": "test",
+    "mp": 0.8131719762514453,
+    "mr": 0.8088745627199543,
+    "map50": 0.7657060426786555,
+    "map75": 0.6838256472349846,
+    "map50_95": 0.6446430644341128,
+    "speed_preprocess_ms": 2.408904459144768,
+    "speed_inference_ms": 10.830631918289338,
+    "speed_loss_ms": 0.0019756614805628,
+    "speed_postprocess_ms": 2.199118529180518,
+    "status": "ok"
+  },
+  {
+    "model_alias": "YOLOv11n",
+    "checkpoint_path": "/content/drive/MyDrive/Papaya_Leaf_Disease_Classification/Model/YOLOv11/YOLOv11n/weights/best.pt",
+    "split": "test",
+    "mp": 0.7460508264767306,
+    "mr": 0.7562549554124239,
+    "map50": 0.7470570476505347,
+    "map75": 0.6567745697419222,
+    "map50_95": 0.6125911357966233,
+    "speed_preprocess_ms": 2.8385394007812814,
+    "speed_inference_ms": 7.244769583658905,
+    "speed_loss_ms": 0.0043082023333329,
+    "speed_postprocess_ms": 2.705835093386098,
+    "status": "ok"
+  }
+]

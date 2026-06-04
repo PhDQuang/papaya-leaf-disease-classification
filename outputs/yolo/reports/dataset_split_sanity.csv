@@ -1,0 +1,4 @@
+﻿split,num_images,num_labels,num_missing_labels,num_orphan_labels
+train,1194,1194,0,0
+val,256,256,0,0
+test,257,257,0,0
