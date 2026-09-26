@@ -19,6 +19,7 @@ data/raw/
 data/interim/
 data/processed/
 prepared_data_v1/
+*.csv
 
 # Large model checkpoints
 *.keras

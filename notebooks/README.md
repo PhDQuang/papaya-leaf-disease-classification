@@ -10,6 +10,8 @@ The main notebooks are ordered by the project workflow:
 | 4 | `04_train_efficientnet_b1_classifier.ipynb` | Train EfficientNetB1 classifier |
 | 5 | `05_train_efficientnet_b2_classifier.ipynb` | Train EfficientNetB2 classifier |
 | 6 | `06_evaluate_yolov11_efficientnet_cascade.ipynb` | Evaluate the YOLOv11 + EfficientNet cascade |
+| 7 | `07_benchmark_model_throughput_colab.ipynb` | Benchmark cascade inference throughput on the notebook 06 test set |
+| 8 | `08_export_android_models_colab.ipynb` | Export YOLOv11m to NCNN and EfficientNet-B2 to TFLite for the Android app |
 
 Baseline notebooks are stored in `baselines/`:
 

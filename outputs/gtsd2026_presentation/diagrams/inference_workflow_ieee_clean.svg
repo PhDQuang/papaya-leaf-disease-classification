@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="860" viewBox="0 0 1000 860" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#333333"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2E7D55"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2F6FB6"/>
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#D38B1C"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#C94A45"/>
+    </marker>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="1" dy="3" stdDeviation="3" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="860" fill="#F8FAF7" rx="12"/>
+
+  <!-- Title Section -->
+  <text x="500" y="42" font-size="22" font-weight="bold" fill="#17231A" text-anchor="middle">
+    Two-Stage Deep Learning Cascade: End-to-End Inference Workflow
+  </text>
+  <text x="500" y="65" font-size="13" fill="#5B6B5F" text-anchor="middle">
+    Real-Time Lesion Localization (YOLOv11m) &amp; ROI Classification (EfficientNet-B2) with Multi-Lesion Routing Logic (~30-45 ms Latency)
+  </text>
+  <line x1="50" y1="80" x2="950" y2="80" stroke="#CAD7CC" stroke-width="1.5"/>
+
+  <!-- ================= INPUT IMAGE ================= -->
+  <rect x="360" y="100" width="280" height="65" rx="10" fill="#FFFFFF" stroke="#17231A" stroke-width="2" filter="url(#shadow)"/>
+  <text x="500" y="126" font-size="15" font-weight="bold" fill="#17231A" text-anchor="middle">1. Input Orchard Field Image</text>
+  <text x="500" y="148" font-size="12" fill="#5B6B5F" text-anchor="middle">Full Resolution RGB Image (Unprocessed)</text>
+
+  <!-- Arrow down to Stage 1 -->
+  <line x1="500" y1="165" x2="500" y2="195" stroke="#333" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- ================= STAGE 1: YOLOv11m DETECTOR ================= -->
+  <rect x="260" y="195" width="480" height="80" rx="10" fill="#E7F0FA" stroke="#2F6FB6" stroke-width="2.5" filter="url(#shadow)"/>
+  <text x="500" y="222" font-size="16" font-weight="bold" fill="#2F6FB6" text-anchor="middle">2. Stage 1: YOLOv11m Lesion Detector</text>
+  <text x="500" y="244" font-size="13" font-weight="bold" fill="#17231A" text-anchor="middle">C3k2 Blocks &amp; C2PSA Spatial Attention Mechanism</text>
+  <text x="500" y="262" font-size="12" fill="#5B6B5F" text-anchor="middle">Scans image to predict N lesion bounding boxes above confidence threshold</text>
+
+  <!-- Arrow down to Decision Diamond -->
+  <line x1="500" y1="275" x2="500" y2="310" stroke="#2F6FB6" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+
+  <!-- ================= DECISION: NUMBER OF LESIONS N ================= -->
+  <polygon points="500,310 680,365 500,420 320,365" fill="#FFF3DE" stroke="#D38B1C" stroke-width="2.5" filter="url(#shadow)"/>
+  <text x="500" y="360" font-size="14" font-weight="bold" fill="#D38B1C" text-anchor="middle">Bounding Box Count (N)?</text>
+  <text x="500" y="378" font-size="12" fill="#17231A" text-anchor="middle">Intelligent Routing Logic</text>
+
+  <!-- Branch Left: N = 0 (Healthy) -->
+  <line x1="320" y1="365" x2="160" y2="365" stroke="#2E7D55" stroke-width="2.5"/>
+  <line x1="160" y1="365" x2="160" y2="460" stroke="#2E7D55" stroke-width="2.5" marker-end="url(#arrow-green)"/>
+  <rect x="180" y="345" width="100" height="26" rx="5" fill="#2E7D55"/>
+  <text x="230" y="362" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">N = 0 Box</text>
+  <text x="160" y="415" font-size="12" font-weight="bold" fill="#2E7D55" text-anchor="middle">No Lesion Detected</text>
+
+  <!-- Branch Middle: N = 1 (Single Lesion) -->
+  <line x1="500" y1="420" x2="500" y2="460" stroke="#2F6FB6" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <rect x="460" y="428" width="80" height="24" rx="5" fill="#2F6FB6"/>
+  <text x="500" y="444" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">N = 1 Box</text>
+
+  <!-- Branch Right: N > 1 (Multiple Lesions) -->
+  <line x1="680" y1="365" x2="840" y2="365" stroke="#C94A45" stroke-width="2.5"/>
+  <line x1="840" y1="365" x2="840" y2="460" stroke="#C94A45" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+  <rect x="720" y="345" width="100" height="26" rx="5" fill="#C94A45"/>
+  <text x="770" y="362" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">N &gt; 1 Boxes</text>
+  <text x="840" y="415" font-size="12" font-weight="bold" fill="#C94A45" text-anchor="middle">Multiple Lesions Detected</text>
+
+
+  <!-- ================= STAGE 2 / ROI CROPPING BOXES ================= -->
+  <!-- Left Box: Instant Healthy Output -->
+  <rect x="60" y="460" width="200" height="110" rx="10" fill="#E6F2EA" stroke="#2E7D55" stroke-width="2.5" filter="url(#shadow)"/>
+  <text x="160" y="490" font-size="15" font-weight="bold" fill="#2E7D55" text-anchor="middle">Healthy / Background</text>
+  <text x="160" y="515" font-size="12" fill="#17231A" text-anchor="middle">Filters out healthy leaves,</text>
+  <text x="160" y="533" font-size="12" fill="#17231A" text-anchor="middle">soil, stones, and weeds.</text>
+  <text x="160" y="555" font-size="11" font-weight="bold" fill="#2E7D55" text-anchor="middle">(Bypasses CNN -&gt; Ultra Fast!)</text>
+
+  <!-- Middle Box: Single Crop & Resize -->
+  <rect x="380" y="460" width="240" height="110" rx="10" fill="#FFFFFF" stroke="#2F6FB6" stroke-width="2" filter="url(#shadow)"/>
+  <text x="500" y="490" font-size="15" font-weight="bold" fill="#2F6FB6" text-anchor="middle">3. Single ROI Crop &amp; Resize</text>
+  <text x="500" y="515" font-size="12" fill="#17231A" text-anchor="middle">Crop bounding box area</text>
+  <text x="500" y="535" font-size="12" font-weight="bold" fill="#D38B1C" text-anchor="middle">Resize to 260 x 260 x 3</text>
+  <text x="500" y="555" font-size="11" fill="#5B6B5F" text-anchor="middle">(Removes all background clutter)</text>
+
+  <!-- Right Box: Multi Crop & Resize -->
+  <rect x="720" y="460" width="240" height="110" rx="10" fill="#FFFFFF" stroke="#C94A45" stroke-width="2" filter="url(#shadow)"/>
+  <text x="840" y="490" font-size="15" font-weight="bold" fill="#C94A45" text-anchor="middle">3. Multi-ROI Crop &amp; Resize</text>
+  <text x="840" y="515" font-size="12" fill="#17231A" text-anchor="middle">Crop all N lesion boxes</text>
+  <text x="840" y="535" font-size="12" font-weight="bold" fill="#D38B1C" text-anchor="middle">Resize all N to 260 x 260 x 3</text>
+  <text x="840" y="555" font-size="11" fill="#5B6B5F" text-anchor="middle">(Independent ROI preparation)</text>
+
+  <!-- Arrows from Crop Boxes down to EfficientNet Stage -->
+  <line x1="500" y1="570" x2="500" y2="610" stroke="#2F6FB6" stroke-width="2.5" marker-end="url(#arrow-amber)"/>
+  <line x1="840" y1="570" x2="840" y2="635" stroke="#C94A45" stroke-width="2.5"/>
+  <line x1="840" y1="635" x2="730" y2="635" stroke="#C94A45" stroke-width="2.5" marker-end="url(#arrow-amber)"/>
+
+  <!-- ================= STAGE 2: EFFICIENTNET-B2 CLASSIFIER ================= -->
+  <rect x="270" y="610" width="460" height="85" rx="10" fill="#FFF3DE" stroke="#D38B1C" stroke-width="2.5" filter="url(#shadow)"/>
+  <text x="500" y="636" font-size="16" font-weight="bold" fill="#D38B1C" text-anchor="middle">4. Stage 2: EfficientNet-B2 Classifier</text>
+  <text x="500" y="658" font-size="13" font-weight="bold" fill="#17231A" text-anchor="middle">MBConv Blocks with Depthwise Separable Convolutions</text>
+  <text x="500" y="678" font-size="12" fill="#5B6B5F" text-anchor="middle">Predicts exact disease class (Anthracnose, Bacterial Spot, Curl, Ring Spot)</text>
+
+  <!-- Arrows down to Final Output -->
+  <line x1="160" y1="570" x2="160" y2="735" stroke="#2E7D55" stroke-width="2.5"/>
+  <line x1="160" y1="735" x2="310" y2="735" stroke="#2E7D55" stroke-width="2.5" marker-end="url(#arrow-green)"/>
+
+  <line x1="500" y1="695" x2="500" y2="735" stroke="#D38B1C" stroke-width="2.5" marker-end="url(#arrow-amber)"/>
+
+  <!-- ================= FINAL DIAGNOSIS & AGGREGATION ================= -->
+  <rect x="310" y="735" width="380" height="90" rx="10" fill="#E7F0FA" stroke="#2F6FB6" stroke-width="3" filter="url(#shadow)"/>
+  <text x="500" y="763" font-size="16" font-weight="bold" fill="#17231A" text-anchor="middle">5. Final Disease Diagnosis &amp; Visualization</text>
+  <text x="500" y="785" font-size="13" font-weight="bold" fill="#2F6FB6" text-anchor="middle">Outputs Disease Label, Confidence Level &amp; Bounding Box Overlay</text>
+  <text x="500" y="808" font-size="11" fill="#5B6B5F" text-anchor="middle">Multi-Lesion Aggregation: Highest Confidence or Clinical Severity Priority</text>
+
+  <!-- Multi-Lesion Aggregation note pointing to Final Output -->
+  <rect x="740" y="735" width="200" height="75" rx="8" fill="#FCEAE8" stroke="#C94A45" stroke-width="1.5"/>
+  <text x="840" y="756" font-size="12" font-weight="bold" fill="#C94A45" text-anchor="middle">Multi-Lesion Aggregation</text>
+  <text x="840" y="774" font-size="11" fill="#17231A" text-anchor="middle">If multiple ROI classes output,</text>
+  <text x="840" y="790" font-size="11" fill="#17231A" text-anchor="middle">system selects highest score</text>
+  <text x="840" y="804" font-size="11" fill="#17231A" text-anchor="middle">or reports co-infection.</text>
+  <line x1="740" y1="772" x2="690" y2="772" stroke="#C94A45" stroke-width="2" marker-end="url(#arrow-red)"/>
+</svg>
