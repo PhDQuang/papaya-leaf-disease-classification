@@ -1,0 +1,38 @@
+import { Ionicons } from '@expo/vector-icons';
+import { router, useFocusEffect } from 'expo-router';
+import { useCallback, useState } from 'react';
+import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { LABELS, labelFor } from '../data/labels';
+import { getHistory, type HistoryItem } from '../data/history';
+import { BottomNav } from '../ui/BottomNav';
+import { C } from '../ui/theme';
+
+export default function HomeScreen() {
+  const insets = useSafeAreaInsets();
+  const [recent, setRecent] = useState<HistoryItem[]>([]);
+  useFocusEffect(useCallback(() => { getHistory().then((items) => setRecent(items.slice(0, 2))).catch(() => {}); }, []));
+  return <View style={s.page}>
+    <ScrollView contentContainerStyle={{ paddingTop: insets.top + 22, paddingBottom: 30 }} showsVerticalScrollIndicator={false}>
+      <View style={s.header}><View style={s.brandIcon}><Ionicons name="leaf" size={22} color="white" /></View><View><Text style={s.brand}>PAPAYA LEAF</Text><Text style={s.brandSub}>Trợ lý sức khỏe cây trồng</Text></View><View style={s.offline}><View style={s.dot} /><Text style={s.offlineText}>OFFLINE</Text></View></View>
+      <View style={s.titleBlock}><Text style={s.eyebrow}>CHÀO MỪNG BẠN</Text><Text style={s.title}>Chăm lá khỏe,{ '\n' }mùa màng xanh.</Text><Text style={s.description}>Chụp lá đu đủ, khoanh vùng dấu hiệu bệnh và lưu kết quả ngay trên thiết bị.</Text></View>
+      <View style={s.hero}>
+        <View style={s.heroCircle1} /><View style={s.heroCircle2} />
+        <View style={s.heroCopy}><View style={s.heroPill}><Ionicons name="sparkles" size={13} color="#D4F0CD" /><Text style={s.heroPillText}>NHẬN DIỆN LÁ ĐU ĐỦ</Text></View><Text style={s.heroTitle}>Bắt đầu với{ '\n' }một bức ảnh</Text><Text style={s.heroBody}>Chụp trực tiếp hoặc chọn ảnh có sẵn trong máy.</Text><Pressable style={s.heroButton} onPress={() => router.push('/scan')}><Ionicons name="camera-outline" size={20} color={C.green} /><Text style={s.heroButtonText}>Quét lá ngay</Text><Ionicons name="arrow-forward" size={18} color={C.green} /></Pressable></View>
+        <Ionicons name="leaf" size={168} color="#85BC87" style={s.heroLeaf} />
+      </View>
+      <View style={s.sectionHead}><Text style={s.sectionTitle}>Nhận diện 5 trạng thái</Text><Text style={s.sectionNote}>04 bệnh · 01 khỏe</Text></View>
+      <View style={s.labels}>{LABELS.map((label) => <View key={label.id} style={s.label}><View style={[s.labelMark, { backgroundColor: label.color }]}><Text style={s.labelMarkText}>{label.short}</Text></View><Text numberOfLines={1} style={s.labelText}>{label.name}</Text></View>)}</View>
+      <View style={s.sectionHead}><Text style={s.sectionTitle}>Gần đây</Text><Pressable onPress={() => router.push('/history')}><Text style={s.link}>Xem tất cả  →</Text></Pressable></View>
+      {recent.length ? recent.map((item) => <Pressable key={item.id} style={s.recent} onPress={() => router.push({ pathname: '/detail/[id]', params: { id: item.id } })}><Image source={{ uri: item.annotatedUri }} style={s.recentImage} /><View style={{ flex: 1 }}><Text style={s.recentName}>{labelFor(item.label).name}</Text><Text style={s.recentMeta}>{new Date(item.createdAt).toLocaleDateString('vi-VN')} · {item.source === 'manual' ? 'Gán nhãn thủ công' : 'Phân tích AI'}</Text></View><Ionicons name="chevron-forward" size={18} color={C.muted} /></Pressable>) : <Pressable style={s.empty} onPress={() => router.push('/scan')}><Ionicons name="images-outline" size={28} color={C.green2} /><View style={{ flex: 1 }}><Text style={s.emptyTitle}>Chưa có ảnh nào</Text><Text style={s.emptyBody}>Ảnh đã gán nhãn sẽ xuất hiện tại đây.</Text></View><Ionicons name="arrow-forward" size={18} color={C.green} /></Pressable>}
+    </ScrollView><BottomNav active="home" />
+  </View>;
+}
+
+const s = StyleSheet.create({
+  page: { flex: 1, backgroundColor: C.bg }, header: { flexDirection: 'row', alignItems: 'center', marginHorizontal: 24, gap: 10 }, brandIcon: { width: 42, height: 42, borderRadius: 14, backgroundColor: C.green, alignItems: 'center', justifyContent: 'center' }, brand: { fontSize: 15, letterSpacing: 1.5, color: C.ink, fontWeight: '900' }, brandSub: { fontSize: 10, color: C.muted, marginTop: 2 }, offline: { marginLeft: 'auto', flexDirection: 'row', alignItems: 'center', gap: 5, borderRadius: 12, paddingHorizontal: 9, paddingVertical: 7, backgroundColor: C.pale }, dot: { width: 6, height: 6, borderRadius: 3, backgroundColor: C.green2 }, offlineText: { fontSize: 9, color: C.green, fontWeight: '800', letterSpacing: 0.7 },
+  titleBlock: { marginHorizontal: 24, marginTop: 34, marginBottom: 22 }, eyebrow: { fontSize: 10, fontWeight: '800', letterSpacing: 2, color: C.green2 }, title: { color: C.ink, fontSize: 33, fontWeight: '800', lineHeight: 40, marginTop: 10, letterSpacing: -1 }, description: { color: C.muted, fontSize: 13, lineHeight: 20, marginTop: 9, maxWidth: 320 },
+  hero: { marginHorizontal: 20, borderRadius: 28, backgroundColor: C.green, height: 252, overflow: 'hidden' }, heroCircle1: { position: 'absolute', width: 260, height: 260, borderRadius: 130, backgroundColor: '#28684C', right: -92, top: -85 }, heroCircle2: { position: 'absolute', width: 178, height: 178, borderRadius: 89, borderWidth: 1, borderColor: '#669677', right: -42, bottom: -80 }, heroCopy: { margin: 24, zIndex: 2 }, heroPill: { flexDirection: 'row', alignItems: 'center', alignSelf: 'flex-start', gap: 5, paddingHorizontal: 10, paddingVertical: 7, borderRadius: 12, backgroundColor: '#337053' }, heroPillText: { color: '#D4F0CD', fontSize: 9, fontWeight: '800', letterSpacing: 0.7 }, heroTitle: { color: C.white, fontSize: 27, lineHeight: 33, fontWeight: '800', marginTop: 12 }, heroBody: { color: '#C4DAC9', fontSize: 12, maxWidth: 190, lineHeight: 17, marginTop: 5 }, heroButton: { marginTop: 15, width: 182, height: 42, borderRadius: 13, backgroundColor: C.white, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8 }, heroButtonText: { color: C.green, fontWeight: '800', fontSize: 12 }, heroLeaf: { position: 'absolute', right: -18, bottom: 10, transform: [{ rotate: '-30deg' }], opacity: 0.9 },
+  sectionHead: { marginHorizontal: 24, marginTop: 26, marginBottom: 13, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }, sectionTitle: { color: C.ink, fontSize: 17, fontWeight: '800' }, sectionNote: { color: C.muted, fontSize: 11 }, labels: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginHorizontal: 20 }, label: { flexDirection: 'row', alignItems: 'center', borderRadius: 13, paddingVertical: 8, paddingHorizontal: 10, gap: 6, backgroundColor: C.white, borderWidth: 1, borderColor: C.line }, labelMark: { borderRadius: 7, paddingHorizontal: 4, minWidth: 23, height: 22, justifyContent: 'center', alignItems: 'center' }, labelMarkText: { color: C.ink, fontSize: 8, fontWeight: '900' }, labelText: { color: C.ink, fontSize: 11, fontWeight: '700' }, link: { color: C.green2, fontSize: 12, fontWeight: '700' },
+  empty: { flexDirection: 'row', alignItems: 'center', marginHorizontal: 20, padding: 17, gap: 14, borderRadius: 17, backgroundColor: C.white, borderWidth: 1, borderColor: C.line }, emptyTitle: { color: C.ink, fontWeight: '800', fontSize: 13 }, emptyBody: { color: C.muted, fontSize: 11, marginTop: 3 }, recent: { flexDirection: 'row', alignItems: 'center', marginHorizontal: 20, marginBottom: 8, padding: 9, gap: 13, backgroundColor: C.white, borderRadius: 16 }, recentImage: { width: 55, height: 55, borderRadius: 10 }, recentName: { fontSize: 13, fontWeight: '800', color: C.ink }, recentMeta: { fontSize: 10, color: C.muted, marginTop: 4 },
+});

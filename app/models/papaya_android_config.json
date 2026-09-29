@@ -1,0 +1,28 @@
+{
+  "yolo_input_size": 832,
+  "cnn_input_size": 260,
+  "yolo_classes": [
+    "Anthracnose",
+    "BacterialSpot",
+    "Curl",
+    "RingSpot"
+  ],
+  "cnn_classes": [
+    "Anthracnose",
+    "BacterialSpot",
+    "Curl",
+    "Healthy",
+    "RingSpot"
+  ],
+  "cnn_requires_select_tf_ops": true,
+  "initial_yolo_confidence": 0.5,
+  "retry_yolo_confidences": [
+    0.45,
+    0.4,
+    0.35
+  ],
+  "yolo_nms_iou": 0.7,
+  "full_image_cnn_disease_min_probability": 0.5,
+  "bbox_expand_ratio_each_side": 0.1,
+  "image_vote": "sum(cnn_confidence * yolo_confidence) by predicted CNN class"
+}

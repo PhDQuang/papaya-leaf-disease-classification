@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "app",
-    "slug": "app",
+    "name": "Papaya Leaf AI",
+    "slug": "papaya-leaf-ai",
+    "scheme": "papayaleaf",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -9,6 +10,11 @@
     "ios": {
       "supportsTablet": true
     },
+    "plugins": [
+      "expo-router",
+      ["expo-image-picker", {"cameraPermission": "Cho phép chụp ảnh lá đu đủ để phân tích tại máy.", "photosPermission": "Cho phép chọn ảnh lá đu đủ từ thư viện.", "microphonePermission": false}],
+      "expo-sqlite"
+    ],
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
@@ -17,7 +23,7 @@
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false,
-      "package": "com.anonymous.app"
+      "package": "com.papayaleaf.offline"
     },
     "web": {
       "favicon": "./assets/favicon.png"

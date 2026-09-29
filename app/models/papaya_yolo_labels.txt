@@ -1,0 +1,4 @@
+Anthracnose
+BacterialSpot
+Curl
+RingSpot

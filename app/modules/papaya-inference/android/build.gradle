@@ -1,0 +1,33 @@
+plugins {
+  id 'com.android.library'
+  id 'expo-module-gradle-plugin'
+}
+
+group = 'expo.modules.papayainference'
+version = '0.1.0'
+
+android {
+  namespace "expo.modules.papayainference"
+  ndkVersion rootProject.ext.ndkVersion
+  defaultConfig {
+    versionCode 1
+    versionName "0.1.0"
+    externalNativeBuild {
+      cmake { cppFlags '-std=c++17 -O3' }
+    }
+  }
+  sourceSets {
+    main.assets.srcDirs += [file('../../../models')]
+  }
+  externalNativeBuild {
+    cmake { path file('CMakeLists.txt') }
+  }
+  lintOptions {
+    abortOnError false
+  }
+}
+
+dependencies {
+  implementation 'org.tensorflow:tensorflow-lite:2.16.1'
+  implementation 'org.tensorflow:tensorflow-lite-select-tf-ops:2.16.1'
+}

@@ -29,6 +29,7 @@ prepared_data_v1/
 *.pth
 *.onnx
 *.tflite
+!app/models/*.tflite
 
 # Local experiment logs
 runs/
@@ -41,3 +42,45 @@ Thumbs.db
 desktop.ini
 .vscode/
 .idea/
+
+# Secrets and machine-specific configuration
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+*.jks
+*.keystore
+local.properties
+
+# Node / Expo dependencies and generated bundles
+node_modules/
+.expo/
+dist/
+web-build/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Android / native build caches and packages
+.gradle/
+.kotlin/
+.cxx/
+build/
+*.apk
+*.aab
+*.aar
+
+# Duplicate model exports; app/models contains the runtime assets
+/papaya_android_models/
+
+# Generated report previews and annotated evaluation images
+/outputs/android_chapter_6_work/
+/outputs/**/annotated_images/
+
+# Local assistant configuration and temporary Office files
+.agents/
+.codex/
+~$*
